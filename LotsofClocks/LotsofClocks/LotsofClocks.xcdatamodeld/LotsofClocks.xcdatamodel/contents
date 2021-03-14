@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Alarm" representedClassName="Alarm" syncable="YES" codeGenerationType="class">
+        <attribute name="activated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="alarmID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="folderID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notificationID" optional="YES" attributeType="String"/>
+        <attribute name="sound" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <relationship name="alarmToFolder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="folderToAlarm" inverseEntity="Folder"/>
+    </entity>
+    <entity name="Folder" representedClassName="Folder" syncable="YES" codeGenerationType="class">
+        <attribute name="activated" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="folderID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="folderToAlarm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="alarmToFolder" inverseEntity="Alarm"/>
+    </entity>
+    <elements>
+        <element name="Alarm" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Folder" positionX="-63" positionY="18" width="128" height="89"/>
+    </elements>
+</model>
